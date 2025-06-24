@@ -1,5 +1,5 @@
 name: Me Second Workflow
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
         run : echo "Testing code for model"
 
   Second_job:
-    needs: first-job
+    needs: first-job #Usando [] Se puede agregar mas dependencias
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
