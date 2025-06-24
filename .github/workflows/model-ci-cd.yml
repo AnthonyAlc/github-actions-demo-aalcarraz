@@ -19,7 +19,27 @@ jobs:
         run: python  src/0-split-dataset.py
       - name: Preprocess Dataset Train
         run: python src/1-preprocess-dataset-train.py
-      - name: Preprocess Dataset Test
+      - name: Prepare Dataset Test
         run: python src/2-prepare-dataset-test.py
       - name: Build Model
         run: echo "Build Model"
+
+  model-cd:
+    needs: model-ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Python Setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+      - name: Deploy Mode
+        run: echo "Deplou model to aws"
+      - name: Install Python Dependencias
+        run: |
+
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Split Dataset
+        run: python  src/0-split-dataset.py
