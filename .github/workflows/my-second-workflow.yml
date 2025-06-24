@@ -1,7 +1,7 @@
 name: Me Second Workflow
 on: workflow_dispatch
 jobs:
-  firs_job:
+  first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
