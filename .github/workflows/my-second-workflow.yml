@@ -11,4 +11,4 @@ jobs:
         with:
           python-version: 3.12
       - name: Verify Python
-        uses: echo "python --version"
+        run: echo "python --version"
