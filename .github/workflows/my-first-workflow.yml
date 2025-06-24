@@ -8,7 +8,7 @@ jobs:
         run: echo "Hello world!!!!"
       - name: Print multiple lines
         run: |
-          - echo "1st. Line"
-          - echo "2nd. Line"
+          echo "1st. Line"
+          echo "2nd. Line"
       - name: Print Goodbye
         run: echo "Goodbye!"
